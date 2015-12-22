@@ -1,0 +1,115 @@
+<html>
+<head>
+	<title>Notifoo - A basic on-click notification plugin</title>
+	<link rel="stylesheet" type="text/css" href="notifoo.css">
+	<style type="text/css">
+		button {
+			background-color: beige;
+			border: 1px solid darkgray;
+			border-radius: 3px;
+			color: darkblue;
+			height: 25px;
+			width: 100px;
+		}
+		button:hover {
+			background-color: lightgray;
+			box-shadow: 2px 2px 3px gray;
+		}
+		.wrapper {
+			width:49%;
+			margin:50px auto 0;
+			line-height:40px;
+			text-align:center;
+		}
+		@media screen and (max-width: 540px) { .wrapper { width: 100%; } }
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="notifoo.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Notifoo</h1>
+		<h3>A very basic &amp; extendable notification plugin with jQuery</h3>
+		<button id="def" notifoo="Default">Default</button>
+		<button id="succ" notifoo="Success!">Success</button>
+		<button id="warn" notifoo="Warning!">Warning</button>
+		<button id="erro" notifoo="Error!">Error</button>
+		<button id="info" notifoo="Info.">Info</button>
+		<button id="slide" notifoo="This slides up">Slide</button>
+		<button id="fade" notifoo="This fades out">Fade</button>
+		<button id="timeFast" notifoo="This stays for 5 seconds">Timer 5s</button>
+		<button id="timeSlow" notifoo="This stays for 0.5 seconds">Timer 0.5s</button>
+		<button id="rightS" notifoo="This goes on right">Right</button>
+		<button id="leftS" notifoo="This goes on left">Left</button>
+		<button id="middS" notifoo="This goes on top">Middle</button>
+		<button id="mix" notifoo="Right, fade, warning, 3s">Combined</button>
+		<button id="custom" notifoo="MUCH WOW">Custom</button>
+		<br><br>
+	</div>
+</body>
+
+<script>
+
+$('#def').notifoo();
+
+$('#succ').notifoo({
+	typeNotify: 'success'
+});
+
+$('#warn').notifoo({
+	typeNotify: 'warning'
+});
+
+$('#erro').notifoo({
+	typeNotify: 'error'
+});
+
+$('#info').notifoo({
+	typeNotify: 'info'
+});
+
+$('#slide').notifoo({
+	animation: 'slide'
+});
+
+$('#fade').notifoo({
+	animation: 'fade'
+});
+
+$('#timeFast').notifoo({
+	timer: 5000
+});
+
+$('#timeSlow').notifoo({
+	timer: 0.5
+});
+
+$('#rightS').notifoo({
+	position: 'right'
+});
+
+$('#leftS').notifoo({
+	position: 'left'
+});
+
+$('#middS').notifoo({
+	position: 'top'
+});
+
+$('#mix').notifoo({
+	position: 'right',
+	animation: 'fade',
+	typeNotify: 'warning',
+	timer: 3000
+});
+
+//custom typeNotify added to the plugin
+$('#custom').notifoo({
+	animation: 'fade',
+	typeNotify: 'custom1',
+	position: 'left',
+	timer: 4000
+});
+
+</script>
+</html>
