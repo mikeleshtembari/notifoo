@@ -23,8 +23,13 @@ or at http://mikele.xyz/notifoo.html
 ```html
 	<button id="error" notifoo="There was an error">Error</button>
 ```
+* **The content of the notification** box is the html tag attribute `**notifoo="the message"**`, on whose click event you call a notification
 * Calling the plugin (best in the footer section)
 ```javascript
+	// default
+	$('#error').notifoo();
+
+	// with options
 	$('#error').notifoo({
 		animation: 'slide',
 		typeNotify: 'error',
