@@ -1,6 +1,7 @@
 # Notifoo v1.0.0
 ###A basic on-click notification plugin for your website
-* You can customize it easily, or add other classes 'n stuff
+* Show a notification for your on-click events
+* You can customize it easily, or extend it
 * Made with HTML, CSS, jQuery
 
 ###License
@@ -14,16 +15,16 @@ or at http://mikele.xyz/notifoo.html
 * Copy `notifoo.js` and `notifoo.css` in your directory
 * Include jQuery first, then these 2 files in the html markup
 ```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="notifoo.css">
-<script src="notifoo.js"></script>
+	<link rel="stylesheet" type="text/css" href="notifoo.css">
+	<script src="notifoo.js"></script>
 ```
 * The html markup:
 ```html
 	<button id="error" notifoo="There was an error">Error</button>
 ```
-* **The content of the notification** box is the html tag attribute `**notifoo="the message"**`, on whose click event you call a notification
+* **The content of the notification** box is the html tag attribute `notifoo="the message"`, on whose click event you call a notification
 * Calling the plugin (best in the footer section)
 ```javascript
 	// default
@@ -58,7 +59,9 @@ or at http://mikele.xyz/notifoo.html
 	position: 'right'
 ```
 ###Extend
-You can add a new type of notification, by simply adding a new CSS class
+You can add a new type of notification, by simply adding a new CSS class  
+`notifoo--type-MY_TYPE` and later use the option `typeNotify: MY_TYPE`  
+For more, check the example class `.notifoo--type-custom1` in the CSS
 
 ###Examples
 Check the live demo for many examples:  
@@ -66,7 +69,7 @@ Go at http://mikeleshtembari.github.io/notifoo/
 or at http://mikele.xyz/notifoo.html
 
 ###Known issues
-*
+* 
 
 ###Version 1.0.0
 * Initial release
