@@ -1,0 +1,87 @@
+/* notifoo.css
+ * Basic customizable notification plugin v1.0.0
+ * Copyright (c) 2015 Mikele Shtembari - github.com/mikeleshtembari
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ * Date: 2015.12.23
+ */
+
+/*
+ * In order to add a new type of notification, instead of modifying any existent
+ * classes, you can add new ones, like this:
+ * .notifoo--type-NEW_TYPE { ... }
+ * Later, when you call the plugin, use the option typeNotify: 'NEW_TYPE'
+ * Check the example with 'custom1' below
+ */
+
+
+.notifoo--type-success {
+	background-color: lightgreen;
+	border: 1px solid green;
+	color: darkgreen;
+	width: 300px;
+}
+
+.notifoo--type-error {
+	background-color: #F9B2AD;
+	border: 1px solid #8F0904;
+	color: #9F1106;
+}
+
+.notifoo--type-warning {
+	background-color: #F7F9AD;
+	border: 1px solid #7D8F04;
+	color: #919F06;
+}
+
+.notifoo--type-info {
+	background-color: #ADF9EC;
+	border: 1px solid #048F8F;
+	color: #01586B;
+}
+
+/* custom typeNotify */
+.notifoo--type-custom1 {
+	background-image: url(https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg);
+	background-size: cover;
+	border: 5px dotted gold;
+	color: white;
+	font-weight: bold;
+	height: 120px;
+	text-shadow: 2px 2px 5px black;
+}
+
+/* base classes */
+.notifoo--base {
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px #969997;
+	font-family: arial;
+	font-size: 20px;
+	margin-bottom: 5px;
+	padding: 5px 15px;
+	text-align: center;
+	width: 100px;
+	word-wrap: break-word;
+	opacity: 0.75;
+	z-index: 99999999;
+}
+
+#notifoo--area {
+	position: fixed;
+}
+
+.notifoo--position-right {
+	top: 10px;
+	right: 10px;
+}
+
+.notifoo--position-left {
+	top: 10px;
+	left: 10px;
+}
+
+.notifoo--position-top {
+	top: 0;
+	left: 50%;
+	margin-left: -75px;
+}
