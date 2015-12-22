@@ -21,7 +21,10 @@
 			line-height:40px;
 			text-align:center;
 		}
-		@media screen and (max-width: 540px) { .wrapper { width: 100%; } }
+		.wrapper > p { border: solid 1px gray; border-radius: 3px; width:190px;margin:8px;float:left;line-height: 25px;}
+		.wrapper > p:hover { background-color: beige;}
+		.wrapper > p > span {font-weight: bold;}
+		@media screen and (max-width: 540px) { .wrapper{ width: 100%; } }
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="notifoo.js"></script>
@@ -30,21 +33,60 @@
 	<div class="wrapper">
 		<h1>Notifoo</h1>
 		<h3>A very basic &amp; extendable notification plugin with jQuery</h3>
-		<button id="def" notifoo="Default">Default</button>
-		<button id="succ" notifoo="Success!">Success</button>
-		<button id="warn" notifoo="Warning!">Warning</button>
-		<button id="erro" notifoo="Error!">Error</button>
-		<button id="info" notifoo="Info.">Info</button>
-		<button id="slide" notifoo="This slides up">Slide</button>
-		<button id="fade" notifoo="This fades out">Fade</button>
-		<button id="timeFast" notifoo="This stays for 5 seconds">Timer 5s</button>
-		<button id="timeSlow" notifoo="This stays for 0.5 seconds">Timer 0.5s</button>
-		<button id="rightS" notifoo="This goes on right">Right</button>
-		<button id="leftS" notifoo="This goes on left">Left</button>
-		<button id="middS" notifoo="This goes on top">Middle</button>
-		<button id="mix" notifoo="Right, fade, warning, 3s">Combined</button>
-		<button id="custom" notifoo="MUCH WOW">Custom</button>
+		<span>Click each button for the notification<br>Hover each button for the HTML markup</span><br>
+		<button id="def" notifoo="Default" title='<button id="def" notifoo="Default">Default</button>'>Default</button>
+		<button id="succ" notifoo="Success!" title='<button id="succ" notifoo="Success!">Success</button>'>Success</button>
+		<button id="warn" notifoo="Warning!" title='<button id="warn" notifoo="Warning!">Warning</button>'>Warning</button>
+		<button id="erro" notifoo="Error!" title='<button id="erro" notifoo="Error!">Error</button>'>Error</button>
+		<button id="info" notifoo="Info." title='<button id="info" notifoo="Info.">Info</button>'>Info</button>
+		<button id="slide" notifoo="This slides up" title='<button id="slide" notifoo="This slides up">Slide</button>'>Slide</button>
+		<button id="fade" notifoo="This fades out" title='<button id="fade" notifoo="This fades out">Fade</button>'>Fade</button>
+		<button id="timeF" notifoo="This stays for 5 seconds" title='<button id="timeF" notifoo="This stays for 5 seconds">Timer 5s</button>'>Timer 5s</button>
+		<button id="timeS" notifoo="This stays for 0.5 seconds" title='<button id="timeS" notifoo="This stays for 0.5 seconds">Timer 0.5s</button>'>Timer 0.5s</button>
+		<button id="rightS" notifoo="This goes on right" title='<button id="rightS" notifoo="This goes on right">Right</button>'>Right</button>
+		<button id="leftS" notifoo="This goes on left" title='<button id="leftS" notifoo="This goes on left">Left</button>'>Left</button>
+		<button id="middS" notifoo="This goes on top" title='<button id="middS" notifoo="This goes on top">Middle</button>'>Middle</button>
+		<button id="mix" notifoo="Right, fade, warning, 3s" title='<button id="mix" notifoo="Right, fade, warning, 3s">Combined</button>'>Combined</button>
+		<button id="custom" notifoo="MUCH WOW" title='<button id="custom" notifoo="MUCH WOW">Custom</button>'>Custom</button>
 		<br><br>
+		<span>Calling the plugin</span><br>
+		<p><span>Default</span><br><code>$('#def').notifoo();<br><br><br></code></p>
+		<p><span>Success</span><br><code>$('#succ').notifoo({<br>typeNotify: 'success'<br>});</code></p>
+		<p><span>Warning</span><br><code>$('#warn').notifoo({<br>typeNotify: 'warning'<br>});</code></p>
+		<p><span>Error</span><br><code>$('#succ').notifoo({<br>typeNotify: 'success'<br>});</code></p>
+		<p><span>Info</span><br><code>$('#info').notifoo({<br>typeNotify: 'info'<br>});</code></p>
+		<p><span>Slide</span><br><code>$('#slide').notifoo({<br>animation: 'slide'<br>});</code></p>
+		<p><span>Fade</span><br><code>$('#fade').notifoo({<br>animation: 'fade'<br>});</code></p>
+		<p><span>Timer 5s</span><br><code>$('#timeF').notifoo({<br>timer: 5000<br>});</code></p>
+		<p><span>Timer 0.5s</span><br><code>$('#timeS').notifoo({<br>timer: 500<br>});</code></p>
+		<p><span>Right</span><br><code>$('#rightS').notifoo({<br>position: 'right'<br>});</code></p>
+		<p><span>Left</span><br><code>$('#leftS').notifoo({<br>position: 'left'<br>});</code></p>
+		<p><span>Middle</span><br><code>$('#middS').notifoo({<br>position: 'top'<br>});</code></p>
+		<p><span>Combined</span><br><code>$('#mix').notifoo({<br>position: 'right',<br>animation: 'fade',<br>typeNotify: 'warning',<br>timer: 3000<br>});</code></p>
+		<div style="clear:both;"/>
+		<div style="text-align:left;line-height:20px;">
+			<br>
+			<h3 style="margin-bottom:-40px;">All options:</h3><br>
+			<pre><code>
+	<i style="color:darkgray;">// string - type of the notification</i>
+	typeNotify: 'success', 'error', 'warning', 'info'
+
+	<i style="color:darkgray;">// integer - how long the notification stays, in milliseconds</i>
+	timer: 1000, 500, 5000
+
+	<i style="color:darkgray;">// string - animation used to close the notification</i>
+	animation: 'slide', 'fade'
+
+	<i style="color:darkgray;">// string - position where it appears</i>
+	position: 'left', 'top', 'right'
+
+	<i style="color:darkgray;">// default options:</i>
+	typeNotify: 'info',
+	timer: 2000,
+	animation: 'slide',
+	position: 'right'
+			</code></pre>
+		</div>
 	</div>
 </body>
 
@@ -76,11 +118,11 @@ $('#fade').notifoo({
 	animation: 'fade'
 });
 
-$('#timeFast').notifoo({
+$('#timeF').notifoo({
 	timer: 5000
 });
 
-$('#timeSlow').notifoo({
+$('#timeS').notifoo({
 	timer: 0.5
 });
 
@@ -110,6 +152,14 @@ $('#custom').notifoo({
 	position: 'left',
 	timer: 4000
 });
+
+$('.wrapper > p').notifoo({
+	timer: 4000
+});
+
+window.onload = function () {
+	$('.wrapper > p').attr('notifoo', 'Please, click on the buttons');
+}
 
 </script>
 </html>
