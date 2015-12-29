@@ -8,8 +8,7 @@
 Released under the MIT license - http://opensource.org/licenses/MIT
 
 ###Live demo
-Go at http://mikeleshtembari.github.io/notifoo/  
-or at http://mikele.xyz/notifoo.html
+Go at http://mikeleshtembari.github.io/notifoo/
 
 ###Installation
 * Copy `notifoo.js` and `notifoo.css` in your directory
@@ -65,8 +64,7 @@ For more, check the example class `.notifoo--type-custom1` in the CSS
 
 ###Examples
 Check the live demo for many examples:  
-Go at http://mikeleshtembari.github.io/notifoo/  
-or at http://mikele.xyz/notifoo.html
+Go at http://mikeleshtembari.github.io/notifoo/
 
 ###Known issues
 * 
