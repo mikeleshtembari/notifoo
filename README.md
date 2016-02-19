@@ -1,4 +1,4 @@
-# Notifoo v1.0.0
+# Notifoo v1.0.1
 ###A basic on-click notification plugin for your website
 * Show a notification for your on-click events
 * You can customize it easily, or extend it
@@ -19,11 +19,11 @@ Go at http://mikeleshtembari.github.io/notifoo/
 	<link rel="stylesheet" type="text/css" href="notifoo.css">
 	<script src="notifoo.js"></script>
 ```
-* The html markup:
+* The html markup (it can be any element that has click event:
 ```html
-	<button id="error" notifoo="There was an error">Error</button>
+	<button id="error">Error</button>
 ```
-* **The content of the notification** box is the html tag attribute `notifoo="the message"`, on whose click event you call a notification
+* **The content of the notification box is now** in the plugin option, called `contents`. It can be absolutely any HTML code, not just plain text.
 * Calling the plugin (best in the footer section)
 ```javascript
 	// default
@@ -31,6 +31,7 @@ Go at http://mikeleshtembari.github.io/notifoo/
 
 	// with options
 	$('#error').notifoo({
+		theContent: 'This is a <strong>bolded</strong> notification',
 		animation: 'slide',
 		typeNotify: 'error',
 		position: 'right',
@@ -39,6 +40,9 @@ Go at http://mikeleshtembari.github.io/notifoo/
 ```
 ###All plugin options:
 ```javascript
+	// string - can be any kind of html markup you'd wish
+	theContent: '<div class="hot-choccolate">Drink</div>',
+
 	// string - type of the notification
 	typeNotify: 'success', 'error', 'warning', 'info'
 
@@ -68,6 +72,9 @@ Go at http://mikeleshtembari.github.io/notifoo/
 
 ###Known issues
 * 
+
+###Version 1.0.1
+* Removed the content from the class. Now it must be added like another jQuery plugin option. It is better for many reasons this way.
 
 ###Version 1.0.0
 * Initial release
