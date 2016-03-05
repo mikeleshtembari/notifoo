@@ -1,5 +1,5 @@
 /* notifoo.js
- * Basic customizable notification plugin v1.0.0
+ * Basic customizable notification plugin v1.0.1
  * Copyright (c) 2015 Mikele Shtembari - github.com/mikeleshtembari
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
