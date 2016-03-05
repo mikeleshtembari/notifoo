@@ -13,6 +13,7 @@ var notify = '';
 	$.fn.notifoo = function(options) {
 		// default options
 		var settings = $.extend({
+			theContent: 'information',
 			typeNotify: 'info',
 			timer: 2000,
 			animation: 'slide',
@@ -26,7 +27,7 @@ var notify = '';
 		});
 
 		this.click(function () {
-			var notify = '<div id="notify' + notifyIndex + '" class="notifoo--base">' + $(this).attr('notifoo') + '</div>';
+			var notify = '<div id="notify' + notifyIndex + '" class="notifoo--base">' + settings.theContent + '</div>';
 			$('#notifoo--area').removeClass().addClass('notifoo--position-' + settings.position).append(notify);
 			if (settings.animation === 'slide')
 				$('#notify' + (notifyIndex)).addClass('notifoo--type-' + settings.typeNotify).delay(settings.timer).slideUp();
